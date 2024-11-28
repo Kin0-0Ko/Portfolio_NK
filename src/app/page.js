@@ -11,7 +11,7 @@ export default function Home() {
 	 <div className='w-full h-screen '>
 		{/* nav and 3d model */}
 		<Navigation/>
-		<RenderModel>
+		<RenderModel preset={'forest'}>
 			<Wizard/>
 		</RenderModel>
 	 </div>

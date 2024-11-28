@@ -10,7 +10,7 @@ const getIcon = (icon) => {
 			return <User className='w-full h-auto' strokeWidth={1.5} />;
 		case "projects":
 			return <Palette className='w-full h-auto' strokeWidth={1.5} />;
-		case "home":
+		case "contact":
 			return <Phone className='w-full h-auto' strokeWidth={1.5} />;
 		case "github":
 			return <Github className='w-full h-auto' strokeWidth={1.5} />;
@@ -32,8 +32,7 @@ const NavButton = ({ x, y, label, link, icon, newTab }) => {
 			style={{ transform: `translate(${x}, ${y})` }}
 		>
 			<Link className='text-foreground rounded-full flex items-center justify-center
-			bg-background/20 border  border-accent/30 border-solid backdrop-blur-[6px] shadow-glass-inset hover:shadow-glass-sm
-			'
+			custom-bg'
 				aria-label={label}
 				href={link}
 				target={newTab ? '_blank' : '_self'}
