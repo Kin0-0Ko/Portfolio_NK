@@ -6,7 +6,7 @@ import { HomeIcon } from 'lucide-react'
 const HomeBtn = () => {
   return (
 	<Link className='text-foreground rounded-full flex items-center justify-center
-			custom-bg fixed top-4 left-4 w-fit self-start'
+			custom-bg fixed top-4 left-4 w-fit self-start z-50'
 				aria-label={"home"}
 				href={'/'}
 				target={'_self'}

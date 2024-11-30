@@ -5,7 +5,7 @@ import { projectsData } from '../../data';
 import RenderModel from '@/components/RenderModel';
 import Staff from '@/components/models/Staff';
 
-export default function Home() {
+export default function Projects() {
   return (
     <>
      <Image src={bg} alt="backround-image"  className='-z-50 fixed w-full h-full object-cover top-0 left-0  object-center opacity-25'/>
