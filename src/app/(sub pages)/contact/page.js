@@ -1,5 +1,6 @@
 import Image from "next/image";
 import bg from "../../../../public/background/contact-background.png"
+import Form from '@/components/contact/Form';
 
 export default function Contact() {
   return (
@@ -10,7 +11,11 @@ export default function Contact() {
 				<h1 className='text-accent font-semibold text-center text-4xl capitalize'>
 					summon the wizzard
 				</h1>
+				<p className='text-center font-light '>
+					Some text
+				</p>
 			</div>
+			<Form/>
 		</article>
 	
     </>
