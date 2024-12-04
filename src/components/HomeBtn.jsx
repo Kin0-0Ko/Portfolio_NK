@@ -1,11 +1,18 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 import { HomeIcon } from 'lucide-react'
+import { motion } from 'framer-motion'
 
+const NavLink = motion(Link)
 
 const HomeBtn = () => {
   return (
-	<Link className='text-foreground rounded-full flex items-center justify-center
+	<NavLink 
+	initial={{scale: 1}}
+	animate={{scale: 1}}
+	transition={{delay: 1}}
+	className='text-foreground rounded-full flex items-center justify-center
 			custom-bg fixed top-4 left-4 w-fit self-start z-50'
 				aria-label={"home"}
 				href={'/'}
@@ -23,7 +30,7 @@ const HomeBtn = () => {
 				</span>
 				</span>
 				
-			</Link>
+			</NavLink>
   )
 }
 

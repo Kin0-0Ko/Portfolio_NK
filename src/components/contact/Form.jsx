@@ -3,6 +3,29 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser'
 import { Toaster, toast } from 'sonner'
+import { motion } from 'framer-motion';
+
+
+const container = {
+	hidden: {opacity: 0},
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.3,
+			delayChildren: 0.2
+		}
+		}
+	}
+
+	const item = {
+		hidden: {
+			scale: 0
+		},
+		show: { scale: 1 }
+	}
+	
+
+
 
 export default function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -51,10 +74,18 @@ export default function Form() {
   return (
 	<>
 	<Toaster richColors={true}/>
-    <form onSubmit={handleSubmit(onSubmit)}
+    <motion.form
+	
+	variants={container}
+	initial="hidden"
+	animate="show"
+	
+	onSubmit={handleSubmit(onSubmit)}
 	className='max-w-md w-full flex flex-col items-center justify-center space-y-4'
 	>
-      <input type="text" placeholder="Name" {...register("Name", {
+      <motion.input
+	 variants={item} 
+	  type="text" placeholder="Name" {...register("Name", {
 		required: 'This field is required!',
 		minLength: {
 			value: 3,
@@ -66,13 +97,17 @@ export default function Form() {
 	  {
 		errors.Name && <span className='inline-block self-start text-accent'>{errors.Name.message}</span>
 	  }
-      <input type="text" placeholder="Email" {...register("Email", {required: 'This field is required!', pattern: /^\S+@\S+$/i})}
+      <motion.input
+	 variants={item} 
+	  type="text" placeholder="Email" {...register("Email", {required: 'This field is required!', pattern: /^\S+@\S+$/i})}
 	 className='w-full p-2 rounded-md shadow-lg text-foregraound focus:outline-none focus:ring-2 focus:ring-accent/50 custom-bg' 
 	  />
 	  	{
 		errors.Email && <span className='inline-block self-start text-accent'>{errors.Email.message}</span>
 	  }
-      <textarea {...register("Message", {required: 'This field is required!', 
+      <motion.textarea
+	 variants={item} 
+	  {...register("Message", {required: 'This field is required!', 
 	  maxLength: {
 		value: 500,
 		message: "Massege should be less then 500 charecters"
@@ -88,12 +123,12 @@ export default function Form() {
 		{
 		errors.Message && <span className='inline-block self-start text-accent'>{errors.Message.message}</span>
 	  }
-      <input
+      <motion.input
 	  value='Send your message'
 	 	className='px-10 py-4 rounded-md shadow-lg bg-background border border-accent/30 border-solid hover:shadow-glass-sm
 		 backdrop-blur-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50  corsore-pointer capitalize' 
 	  type="submit" />
-    </form>
+    </motion.form>
 	</>
   );
 }

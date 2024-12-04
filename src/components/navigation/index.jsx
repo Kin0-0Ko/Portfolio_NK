@@ -4,6 +4,19 @@ import React from 'react'
 import NavButton from './NavButton';
 import useScreenSize from '../hooks/useScreenSize';
 import ResponsiveComp from '../ResponsiveComp';
+import {motion} from 'framer-motion'
+
+
+const container = {
+	hidden: {opacity: 0},
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.3
+		}
+		}
+	}
+
 
 
 const Navigation = () => {
@@ -21,7 +34,13 @@ const Navigation = () => {
 		{
 			(size) => {
 				return size && size >= 480 ? 
-				(<div className='flex items-center justify-center group relative hover:pause animate-spin-slow'>
+				(<motion.div
+
+					variants={container}
+					initial="hidden"
+					animate="show"
+				
+				className='flex items-center justify-center group relative hover:pause animate-spin-slow'>
 				{BtnList.map((btn, index) => {
 		
 					const angleRad = (index	* angleIncrement*Math.PI)/180
@@ -33,11 +52,15 @@ const Navigation = () => {
 					
 		
 				})}
-			</div> )
+			</motion.div> )
 			:
 			(
 				<>
-			<div className='w-full px-2.5 xs:p-0 xs:w-max flex flex-col space-y-4 items-start xs:items-center justify-center group relative '>
+			<motion.div
+
+					variants={container}
+					initial="hidden"
+					animate="show" className='w-full px-2.5 xs:p-0 xs:w-max flex flex-col space-y-4 items-start xs:items-center justify-center group relative '>
 				{BtnList.slice(0,BtnList.length/2).map((btn, index) => {
 
 		
@@ -45,8 +68,13 @@ const Navigation = () => {
 					
 		
 				})}
-			</div> 
-			<div className='w-full px-2.5 xs:p-0 xs:w-max flex flex-col space-y-4 items-end xs:items-center justify-center group relative '>
+			</motion.div> 
+			<motion.div
+
+					variants={container}
+					initial="hidden"
+					animate="show"
+					 className='w-full px-2.5 xs:p-0 xs:w-max flex flex-col space-y-4 items-end xs:items-center justify-center group relative '>
 				{BtnList.slice(BtnList.length/2, BtnList.length).map((btn, index) => {
 		
 		
@@ -54,7 +82,7 @@ const Navigation = () => {
 					
 		
 				})}
-			</div> 
+			</motion.div> 
 				
 				</>
 			)
