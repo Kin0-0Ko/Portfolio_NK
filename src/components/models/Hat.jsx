@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/models/hat-transformed.glb')
+  const { nodes, materials } = useGLTF(`${process.env.BASE_PATH}/models/hat-transformed.glb`)
   const modelRef = useRef();
   useFrame(() => {
 	modelRef.current.rotation.y += 0.007

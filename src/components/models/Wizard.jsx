@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 export default function Wizard(props) {
-  const { nodes, materials } = useGLTF('/models/wizard-transformed.glb')
+  const { nodes, materials } = useGLTF(`${process.env.BASE_PATH}/models/wizard-transformed.glb`)
 
   const modelRef = useRef();
   useFrame((state, delta, xrFrame) => {

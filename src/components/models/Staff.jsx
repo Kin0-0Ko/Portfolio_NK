@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 
 
 export default function Staff(props) {
-  const { nodes, materials } = useGLTF('/models/staff-transformed.glb')
+  const { nodes, materials } = useGLTF(`${process.env.BASE_PATH}/models/staff-transformed.glb`)
 
   const modelRef = useRef();
   useFrame(() => {
