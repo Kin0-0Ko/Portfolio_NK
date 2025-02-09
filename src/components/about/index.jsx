@@ -14,10 +14,10 @@ const AboutDetails = () => {
 				Software Engineer
 			</h2>
 			<p className='font-light text-xs sm:text-sm md:text-base'>
-			Hi, I'm Nikita Kovalenko – a passionate Frontend Developer specializing in React and TypeScript.
-I'm a Computer Science student with a strong foundation in JavaScript, TypeScript, React, Next.js, and modern web technologies. I love building scalable, user-friendly applications and constantly learning new things to improve my skills.
-I enjoy solving problems, writing clean and maintainable code, and working in a collaborative environment. My projects showcase my ability to create functional and visually appealing web applications.
-Looking for opportunities to grow as a developer and contribute to innovative projects. Let's build something amazing together!
+			Hi, I&aposm Nikita Kovalenko – a passionate Frontend Developer specializing in React and TypeScript.
+			I&aposm a Computer Science student with a strong foundation in JavaScript, TypeScript, React, Next.js, and modern web technologies. I love building scalable, user-friendly applications and constantly learning new things to improve my skills.
+			I enjoy solving problems, writing clean and maintainable code, and working in a collaborative environment. My projects showcase my ability to create functional and visually appealing web applications.
+			Looking for opportunities to grow as a developer and contribute to innovative projects. Let&aposs build something amazing together!
 			</p>
 			</ItemLayout>
 
