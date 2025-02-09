@@ -1,13 +1,18 @@
 import Image from "next/image";
 import bg from "../../../../public/background/about-background.png"
 import RenderModel from '@/components/RenderModel';
-import Hat from '@/components/models/Hat';
+// import Hat from '@/components/models/Hat';
 import AboutDetails from '@/components/about';
+import dynamic from 'next/dynamic';
+
+
+const Hat = dynamic(() => import("@/components/models/Hat"), {ssr: false})
+
 
 export default function About() {
   return (
     <>
-     <Image src={bg} alt="backround-image"  className='-z-50 fixed w-full h-full object-cover top-0 left-0  object-center opacity-25'/>
+     <Image priority sizes='100vw' src={bg} alt="backround-image"  className='-z-50 fixed w-full h-full object-cover top-0 left-0  object-center opacity-25'/>
 		
 	<div className='w-full h-3/5 xs:h-3/4 sm:h-screen absolute top-1/2 -translate-y-1/2 left-0'>
 		<RenderModel preset={'dawn'}>
@@ -20,7 +25,7 @@ export default function About() {
 			<h1 className='font-bold text-6xl xs:text-7xl sm:text-8xl lg:text-9xl text-accent'>
 				Nikita Kovalenko 
 			</h1>
-			<p className='font-light text-foreground text-lg'>Something</p>
+			<p className='font-light text-foreground text-lg'>Software Engeneer</p>
 
 		</div>
 	</div>
